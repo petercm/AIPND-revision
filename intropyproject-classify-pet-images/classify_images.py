@@ -35,10 +35,7 @@ def canonicalize_classification(image_classification):
 
 
 def labels_match(image_label, classification_label):
-    if image_label in classification_label:
-        return 1
-    else:
-        return 0
+    return int(image_label in classification_label)
 
 
 def classify_images(images_dir, results_dic, model):
