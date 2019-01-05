@@ -1,0 +1,85 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = alexnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:                  Pickle_01.jpg  label:                     pickle
+ 2 key:                     Dog_01.jpg  label:                        dog
+ 3 key:                  Python_01.jpg  label:                     python
+ 4 key:                    Dog_02.jpeg  label:                        dog
+
+     MATCH:
+
+ NOT A MATCH:
+
+                 Pickle_01.jpg: 
+Real:                     pickle   Classifier: promontory, headland, head, foreland
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:               golden retriever
+
+                 Python_01.jpg: 
+Real:                     python   Classifier: boa constrictor, constrictor constrictor
+
+                   Dog_02.jpeg: 
+Real:                        dog   Classifier:               golden retriever
+
+# Total Images 4 # Matches: 0 # NOT Matches: 4
+
+     MATCH:
+
+ NOT A MATCH:
+
+                 Pickle_01.jpg: 
+Real:                     pickle   Classifier: promontory, headland, head, foreland  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                 Python_01.jpg: 
+Real:                     python   Classifier: boa constrictor, constrictor constrictor  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                   Dog_02.jpeg: 
+Real:                        dog   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+# Total Images 4 # Matches: 0 # NOT Matches: 4
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+
+-----------------------------------------------------------------
+| Dog breed classification results for model:           alexnet |
+|---------------------------------------------------------------|
+| Number of Images                                            4 |
+| Number of Dog Images                                        2 |
+| Number of "Not-a" Dog Images                                2 |
+|---------------------------------------------------------------|
+| % Match                                                   0.0 |
+| % Correct Dogs                                          100.0 |
+| % Correct Breed                                           0.0 |
+| % Correct "Not-a" Dog                                   100.0 |
+|---------------------------------------------------------------|
+| No dogs were misclassified                                    |
+|---------------------------------------------------------------|
+| Some breeds were misclassified:                             2 |
+|
+| Dog_01.jpg                     dog
+|                                golden retriever
+|
+| Dog_02.jpeg                    dog
+|                                golden retriever
+|---------------------------------------------------------------|
+
+** Total Elapsed Runtime: 0:0:0
