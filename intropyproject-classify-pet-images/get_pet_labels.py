@@ -4,7 +4,7 @@
 #
 # PROGRAMMER: petercm
 # DATE CREATED: 12/31/2018
-# REVISED DATE:
+# REVISED DATE: 01/06/2019
 # PURPOSE: Create the function get_pet_labels that creates the pet labels from
 #          the image's filename. This function inputs:
 #           - The Image Folder as image_dir within get_pet_labels function and
@@ -56,6 +56,7 @@ def get_pet_labels(image_dir):
     # Retrieve the filenames from folder pet_images/
     filename_list = listdir(image_dir)
     for fname in filename_list:
-        results_dic[fname] = [label_from_filename(fname)]
+        if not fname.startswith('.'):
+            results_dic[fname] = [label_from_filename(fname)]
 
     return results_dic

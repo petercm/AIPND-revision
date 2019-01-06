@@ -4,7 +4,7 @@
 #
 # PROGRAMMER: petercm
 # DATE CREATED: 01/02/2019
-# REVISED DATE:
+# REVISED DATE: 01/06/2019
 # PURPOSE: Create a function calculates_results_stats that calculates the
 #          statistics of the results of the programrun using the classifier's model
 #          architecture to classify the images. This function will use the
@@ -107,13 +107,18 @@ def calculates_results_stats(results_dic):
             pct_correct_notdogs = results_stats_dic['n_correct_notdogs'] / results_stats_dic['n_notdogs_img'] * 100
         )
 
-    results_stats_dic.update(
-        # Percentage of Correctly Classified Dog Images
-        pct_correct_dogs = results_stats_dic['n_correct_dogs'] / results_stats_dic['n_dogs_img'] * 100,
-        # Percentage of Correctly Classified Dog Breeds
-        pct_correct_breed = results_stats_dic['n_correct_breed'] / results_stats_dic['n_dogs_img'] * 100,
-        # Percentage Label Matches ( regardless if they're a dog)
-        pct_match = results_stats_dic['n_match'] / results_stats_dic['n_images'] * 100
-    )
+    if results_stats_dic['n_dogs_img'] > 0:
+        results_stats_dic.update(
+            # Percentage of Correctly Classified Dog Images
+            pct_correct_dogs = results_stats_dic['n_correct_dogs'] / results_stats_dic['n_dogs_img'] * 100,
+            # Percentage of Correctly Classified Dog Breeds
+            pct_correct_breed = results_stats_dic['n_correct_breed'] / results_stats_dic['n_dogs_img'] * 100
+        )
+
+    if results_stats_dic['n_images'] > 0:
+        results_stats_dic.update(
+            # Percentage Label Matches ( regardless if they're a dog)
+            pct_match = results_stats_dic['n_match'] / results_stats_dic['n_images'] * 100
+        )
 
     return results_stats_dic
